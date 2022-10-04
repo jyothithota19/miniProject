@@ -1,1 +1,1 @@
-# miniProject
+# Team25-Insurance
