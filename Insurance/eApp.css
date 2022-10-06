@@ -1,0 +1,45 @@
+main{
+    background-color:#f2f5f5;
+    display: flex;
+    color:rgb(66, 60, 60);
+    font-weight: 500;
+    font-size:small;
+    /* padding:20%; */
+}
+.brief{
+    width:35%;
+    padding:2rem;
+    padding-left:5%;
+    padding-top:3%;
+    font-weight:600;
+}
+.article{
+    margin-top:7%;
+}
+.offer{
+    display:inline;
+    background-color: rgb(62, 62, 230);
+    color: white;
+    padding:0.2rem;
+}
+article{
+    padding-top:0.8rem;
+}
+.formFill{
+    width:63%;
+    background-color: white;
+    padding: 2rem 3rem;
+}
+.heading,.sub-head,.brief h4,.info{
+    color:rgb(65, 65, 165);
+    font-weight:400;
+}
+.sub-head,.blocks{
+    padding-top:2%;
+}
+.form-control:valid {
+    background-color:  #f2f5f5!important;
+  }
+/* form input{
+    background-color:black;
+} */
