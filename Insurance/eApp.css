@@ -1,58 +1,177 @@
-main{
-    background-color:#f2f5f5;
+main {
+    background-color: #f2f5f5;
     display: flex;
-    color:rgb(66, 60, 60);
+    color: rgb(66, 60, 60);
     font-weight: 500;
-    font-size:small;
+    font-size: small;
     /* padding:20%; */
 }
-.brief{
-    width:35%;
-    padding:2rem;
-    padding-left:5%;
-    padding-top:3%;
-    font-weight:600;
+
+.brief {
+    width: 35%;
+    padding: 2rem;
+    padding-left: 5%;
+    padding-top: 3%;
+    font-weight: 600;
 }
-.article{
-    margin-top:7%;
+.article {
+    margin-top: 7%;
 }
-.offer{
+.fee{
+    font-weight:700;
+}
+.offer {
     background-color: rgb(62, 62, 230);
     color: white;
-    padding:0.2rem;
+    padding: 0.2rem;
 }
-article{
-    padding-top:0.8rem;
+
+article {
+    padding-top: 0.8rem;
 }
-.formFill{
-    width:63%;
+
+.formFill {
+    width: 63%;
     background-color: white;
     padding: 2rem 3rem;
 }
-.heading,.sub-head,.brief h4,.info{
-    color:rgb(65, 65, 165);
-    font-weight:400;
+
+.heading,
+.sub-head,
+.brief h4,
+.info {
+    color: rgb(65, 65, 165);
+    font-weight: 400;
 }
-.sub-head,.blocks{
-    padding-top:2%;
+
+.sub-head,
+.blocks {
+    padding-top: 2%;
 }
+
 .form-control:valid {
-    background-color:  #f2f5f5!important;
-  }
-.submit,.save{
-    width:40%;
-    /* height:0%; */
-    background-color: blue;
-    font-weight:bold;
-    border:solid 0.1rem blue;
-    border-radius:0.2rem;
-    color:white;
+    background-color: #f2f5f5 !important;
 }
-.box{
+
+.submit,
+.save {
+    font-size: large;
+    width: 50%;
+    background-color: blue;
+    font-weight: 600;
+    border: solid 0.1rem blue;
+    border-radius: 0.2rem;
+    color: white;
+    padding: 1%;
+}
+
+.save {
+    background-color: white;
     border: solid 0.2rem skyblue;
-    padding:1rem;
+    color: rgb(54, 147, 184);
+}
+
+.box {
+    border: solid 0.2rem skyblue;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: rgb(85, 83, 83);
     background-color: rgb(208, 226, 233);
 }
-/* form input{
-    background-color:black;
-} */
+
+.info {
+    font-weight: 500;
+}
+
+.print {
+    font-size: 1rem;
+    text-align: end;
+    visibility: hidden;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .print {
+        font-size: 1rem;
+        text-align: end;
+        visibility: visible;
+    }
+
+    main {
+        display: block;
+        width: 100%;
+    }
+    .ruler {
+        display: none;
+    }
+    .fee{
+        padding-top: 4%;
+    }
+    .brief,
+    .formFill {
+        width: 100%;
+    }
+
+    .brief {
+        display: flex;
+    }
+
+    .article {
+        width: 70%;
+        margin: 0%;
+        margin-left: 10%;
+    }
+
+    .formFill {
+        width: 93%;
+        margin-left: 5%;
+    }
+
+    .submit,
+    .save {
+        width: 60%;
+    }
+
+}
+
+@media (min-width:0px) and (max-width:812px) {
+    .print {
+        font-size: 1rem;
+        text-align: end;
+        visibility: visible;
+    }
+
+    main {
+        display: block;
+        width: 100%;
+    }
+
+    .ruler {
+        display: none;
+    }
+
+    .brief,
+    .formFill {
+        width: 100%;
+    }
+
+    .brief {
+        display: flex;
+    }
+
+    .article {
+        width: 70%;
+        margin: 0%;
+        margin-left: 10%;
+    }
+
+    .formFill {
+        width: 93%;
+        margin-left: 5%;
+    }
+
+    .submit,
+    .save {
+        width: 70%;
+    }
+
+}
