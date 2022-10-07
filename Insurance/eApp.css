@@ -17,7 +17,6 @@ main{
     margin-top:7%;
 }
 .offer{
-    display:inline;
     background-color: rgb(62, 62, 230);
     color: white;
     padding:0.2rem;
@@ -40,6 +39,20 @@ article{
 .form-control:valid {
     background-color:  #f2f5f5!important;
   }
+.submit,.save{
+    width:40%;
+    /* height:0%; */
+    background-color: blue;
+    font-weight:bold;
+    border:solid 0.1rem blue;
+    border-radius:0.2rem;
+    color:white;
+}
+.box{
+    border: solid 0.2rem skyblue;
+    padding:1rem;
+    background-color: rgb(208, 226, 233);
+}
 /* form input{
     background-color:black;
 } */
