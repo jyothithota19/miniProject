@@ -7,6 +7,18 @@ main {
     /* padding:20%; */
 }
 
+#myDIV,#arrow {
+    visibility: hidden;
+}
+
+.bi {
+    font-size:2rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+}
+
+
 .brief {
     width: 35%;
     padding: 2rem;
@@ -14,12 +26,15 @@ main {
     padding-top: 3%;
     font-weight: 600;
 }
+
 .article {
     margin-top: 7%;
 }
-.fee{
-    font-weight:700;
+
+.fee {
+    font-weight: 700;
 }
+
 .offer {
     background-color: rgb(62, 62, 230);
     color: white;
@@ -89,7 +104,7 @@ article {
     visibility: hidden;
 }
 
-@media (min-width:768px) and (max-width:1023px) {
+@media (min-width:426px) and (max-width:1023px) {
     .print {
         font-size: 1rem;
         text-align: end;
@@ -100,12 +115,15 @@ article {
         display: block;
         width: 100%;
     }
+
     .ruler {
         display: none;
     }
-    .fee{
+
+    .fee {
         padding-top: 4%;
     }
+
     .brief,
     .formFill {
         width: 100%;
@@ -133,13 +151,20 @@ article {
 
 }
 
-@media (min-width:0px) and (max-width:812px) {
+@media (min-width:0px) and (max-width:425px) {
     .print {
         font-size: 1rem;
         text-align: end;
         visibility: visible;
     }
 
+    #myDIV,#arrow {
+        visibility: visible;
+    }
+#article{
+    /* visibility: hidden; */
+    display:none;
+}
     main {
         display: block;
         width: 100%;
@@ -154,9 +179,9 @@ article {
         width: 100%;
     }
 
-    .brief {
+    /* .brief {
         display: flex;
-    }
+    } */
 
     .article {
         width: 70%;
