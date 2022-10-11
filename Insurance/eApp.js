@@ -1,11 +1,13 @@
 
+
+
 function myFunction() {
     const x = document.getElementById("myDIV");
     const y = document.getElementById("article");
     if (x.className == "bi bi-chevron-down") {
         x.className = "bi bi-chevron-up";
         y.style.display = "block";
-        y.style.visibility="visible"
+        y.style.visibility = "visible";
 
     } else {
         x.className = "bi bi-chevron-down";
@@ -14,19 +16,19 @@ function myFunction() {
 }
 
 
+
 function offerFunc() {
     const x = document.getElementById("arrow");
-    // const y = document.getElementsByTagName("article")
+    const y = document.getElementById("introd")
     if (x.className == "bi bi-caret-down-fill") {
         x.className = "bi bi-caret-up-fill";
-        // if (y.style.visibility === "hidden") {
-        //     y.style.visibility = "visible";
-        // } else {
-        //     y.style.visibility = "hidden";
-        // }
+        y.style.display = "block";
+        y.style.visibility = "visible";
 
     } else {
         x.className = "bi bi-caret-down-fill";
+        y.style.display = "none";
+
     }
 }
 

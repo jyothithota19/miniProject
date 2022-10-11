@@ -27,11 +27,11 @@
    
     <main>
         <section class="brief">
-            <h4>Lorem Ipsum <i id="myDIV" onclick="myFunction(this)" class="bi bi-chevron-down"></i></h4>
+            <h4 class="head">Lorem Ipsum <i id="myDIV" onclick="myFunction(this)" class="bi bi-chevron-down"></i></h4>
             <hr class="mt-0 ruler">
             <section id="article">
                 <p class="offer"><strong>SPECIAL OFFER FOR YOU <i id="arrow" onclick="offerFunc(this)" class="bi bi-caret-down-fill"></i></strong></p>
-                <article>Lorem Ipsum is simply dummy text
+                <article id="introd">Lorem Ipsum is simply dummy text
                     of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard
                     dummy text ever since the 1500s, when an unknown
@@ -42,7 +42,7 @@
                     with the release of Letraset sheets containing Lorem Ipsum passages,
                     and more recently with desktop publishing software like Aldus PageMaker
                     including versions of Lorem Ipsum.</article>
-                <hr class="ruler">
+                <hr class="ruler"><br>
                 <p class="fee">&dollar;295 Annual Fee</p>
             </section>
         </section>
@@ -62,7 +62,7 @@
                 <label>Business Name On Card*
                 <input type="text" class="form-control"></label> -->
                 <section class="row blocks">
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Legal Business Name*
                         </label>
                         <section>
@@ -70,7 +70,7 @@
                                 required="true">
                         </section>
                     </section>
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Business Name On Card*<img src="icon.svg" class="icon" /></label>
                         <section>
                             <input type="text" class="form-control" id="nameOnCard" placeholder="TEST" value="TEST"
@@ -85,14 +85,14 @@
                     </section>
                 </section>
                 <section class="row blocks">
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Business Address Line 2
                         </label>
                         <section>
                             <input type="text" class="form-control" id="address2">
                         </section>
                     </section>
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Zip Code*</label>
                         <section>
                             <input type="number" class="form-control" id="zipCode">
@@ -109,20 +109,20 @@
                 <hr class="mt-4 mb-0">
                 <h5 class="sub-head">ENTER YOUR PERSONAL INFORMATION</h5>
                 <section class="row blocks">
-                    <section class="col-md">
+                    <section class="col-lg ">
                         <label class="text-uppercase">First Name*
                         </label>
                         <section>
                             <input type="text" class="form-control" id="firstName">
                         </section>
                     </section>
-                    <section class="col">
+                    <section class="col-lg">
                         <label>M.I.</label>
                         <section>
                             <input type="number" class="form-control" id="mi">
                         </section>
                     </section>
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Last Name*
                         </label>
                         <section>
@@ -136,9 +136,9 @@
                         <input type="text" class="form-control" id="name">
                     </section>
                 </section>
-                <section class="my-2">
+                <section class="my-2" style="display: flex;">
                     <input type="checkbox">
-                    <label>My home address is the same as my business address</label>
+                    <label style="margin-left: 3%;">My home address is the same as my business address</label>
                 </section>
                 <section class="blocks">
                     <label class="text-uppercase">Home Address Line 1*</label>
@@ -147,14 +147,14 @@
                     </section>
                 </section>
                 <section class="row blocks">
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Home Address Line 2
                         </label>
                         <section>
                             <input type="text" class="form-control" id="haddress2">
                         </section>
                     </section>
-                    <section class="col-md">
+                    <section class="col-lg">
                         <label class="text-uppercase">Zip Code*</label>
                         <section>
                             <input type="number" class="form-control" id="hzipCode">

@@ -3,16 +3,21 @@ main {
     display: flex;
     color: rgb(66, 60, 60);
     font-weight: 500;
-    font-size: small;
+    /* font-size: small; */
     /* padding:20%; */
 }
 
-#myDIV,#arrow {
+#myDIV,
+#arrow {
     visibility: hidden;
 }
 
+#article {
+    display: block;
+}
+
 .bi {
-    font-size:2rem;
+    font-size: 2rem;
     cursor: pointer;
     user-select: none;
     font-size: 1.2rem;
@@ -29,6 +34,7 @@ main {
 
 .article {
     margin-top: 7%;
+    padding-top: 0.8rem;
 }
 
 .fee {
@@ -41,9 +47,6 @@ main {
     padding: 0.2rem;
 }
 
-article {
-    padding-top: 0.8rem;
-}
 
 .formFill {
     width: 63%;
@@ -106,8 +109,6 @@ article {
 
 @media (min-width:426px) and (max-width:1023px) {
     .print {
-        font-size: 1rem;
-        text-align: end;
         visibility: visible;
     }
 
@@ -133,7 +134,7 @@ article {
         display: flex;
     }
 
-    .article {
+    #article {
         width: 70%;
         margin: 0%;
         margin-left: 10%;
@@ -158,16 +159,43 @@ article {
         visibility: visible;
     }
 
-    #myDIV,#arrow {
+    label,
+    .sub-head {
+        margin-top: 5%;
+    }
+
+    h4.head {
+        color: rgb(62, 62, 230);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+
+    p.offer,
+    #introd {
+        margin-top: 8%;
+        width: 85%;
+        /* margin-right: 0%; */
+        margin-left: 20%;
+    }
+
+    #myDIV,
+    #arrow {
         visibility: visible;
     }
-#article{
-    /* visibility: hidden; */
-    display:none;
-}
+
+    #article,
+    #introd {
+        /* visibility: hidden; */
+        display: none;
+    }
+
     main {
         display: block;
         width: 100%;
+        font-size: small;
     }
 
     .ruler {
@@ -179,15 +207,11 @@ article {
         width: 100%;
     }
 
-    /* .brief {
-        display: flex;
-    } */
-
-    .article {
-        width: 70%;
+    .fee {
+        text-align: start;
         margin: 0%;
-        margin-left: 10%;
     }
+
 
     .formFill {
         width: 93%;
