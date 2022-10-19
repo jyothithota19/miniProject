@@ -7,6 +7,25 @@ main {
     /* padding:20%; */
 }
 
+
+.blocks,.lgblocks{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.blocks label,.lgblocks label{
+    display: inline-block;
+    /* margin-bottom: 5px; */
+}
+
+.blocks.success input,.lgblocks.success input{
+    border-color: #2ecc71;
+}
+.blocks.error input,.lgblocks.error input{
+    border-color: red;
+}
+
+
 #myDIV,
 #arrow {
     visibility: hidden;
@@ -16,7 +35,7 @@ main {
     display: block;
 }
 
-.bi {
+.togle {
     font-size: 2rem;
     cursor: pointer;
     user-select: none;
@@ -32,10 +51,6 @@ main {
     font-weight: 600;
 }
 
-.article {
-    margin-top: 7%;
-    padding-top: 0.8rem;
-}
 
 .fee {
     font-weight: 700;
@@ -63,7 +78,7 @@ main {
 }
 
 .sub-head,
-.blocks {
+.blocks,.lgblocks {
     padding-top: 2%;
 }
 
@@ -106,6 +121,28 @@ main {
     text-align: end;
     visibility: hidden;
 }
+.lgblocks i{
+    position: absolute;
+    top: 43%;
+    right: 3%;
+    /* visibility: hidden; */
+} 
+.blocks i{
+    position: absolute;
+    top: 43%;
+    right: 9%;
+    /* visibility: hidden; */
+}
+.blocks small,.lgblocks small{
+    /* visibility: hidden; */
+    position: absolute;
+    bottom: 0;
+}
+.blocks.error small,.lgblocks.error small{
+    color: #e74c3e;
+    visibility: visible;
+} 
+
 
 @media (min-width:426px) and (max-width:1023px) {
     .print {
@@ -148,6 +185,9 @@ main {
     .submit,
     .save {
         width: 60%;
+    }
+    .blocks i{
+        right: 5%;
     }
 
 }
@@ -214,13 +254,13 @@ main {
 
 
     .formFill {
-        width: 93%;
+        width: 90%;
         margin-left: 5%;
     }
 
     .submit,
     .save {
-        width: 70%;
+        width: 90%;
     }
 
 }

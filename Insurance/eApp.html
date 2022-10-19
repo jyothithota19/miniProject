@@ -24,13 +24,14 @@
 </head>
 
 <body>
-   
+
     <main>
         <section class="brief">
             <h4 class="head">Lorem Ipsum <i id="myDIV" onclick="myFunction(this)" class="bi bi-chevron-down"></i></h4>
             <hr class="mt-0 ruler">
             <section id="article">
-                <p class="offer"><strong>SPECIAL OFFER FOR YOU <i id="arrow" onclick="offerFunc(this)" class="bi bi-caret-down-fill"></i></strong></p>
+                <p class="offer"><strong>SPECIAL OFFER FOR YOU <i id="arrow" onclick="offerFunc(this)"
+                            class="bi bi-caret-down-fill togle"></i></strong></p>
                 <article id="introd">Lorem Ipsum is simply dummy text
                     of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard
@@ -49,116 +50,134 @@
         <section class="formFill">
             <form>
                 <h2 class="heading">Apply in minutes. Get a decision in seconds.</h2>
-                <section class="blocks">
-                    <label>EMAIL ADDRESS*<img src="icon.svg" class="icon" /></label>
-                    <section>
-                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com"
-                            value="test@example.com" required="true">
-                    </section>
+                <section class="lgblocks">
+                    <label>EMAIL ADDRESS*<img src="icon.svg"/></label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com"
+                        value="test@example.com" required>
+                    <i class="bi bi-check-circle "></i>
+                    <i class="bi bi-exclamation-triangle-fill "></i>
+                    <small>Error Message</small>
                 </section>
                 <h5 class="sub-head">ENTER YOUR BUSINESS INFORMATION</h5>
                 <!-- <label >Legal Business Name*
                 <input type="text" class="form-control"></label>
                 <label>Business Name On Card*
                 <input type="text" class="form-control"></label> -->
-                <section class="row blocks">
-                    <section class="col-lg">
+                <section class="row">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Legal Business Name*
                         </label>
-                        <section>
-                            <input type="text" class="form-control" id="nameInput" placeholder='test' value="test"
-                                required="true">
-                        </section>
+
+                        <input type="text" class="form-control" id="nameInput" placeholder='test' value="test"
+                            required="true">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
+
                     </section>
-                    <section class="col-lg">
-                        <label class="text-uppercase">Business Name On Card*<img src="icon.svg" class="icon" /></label>
-                        <section>
-                            <input type="text" class="form-control" id="nameOnCard" placeholder="TEST" value="TEST"
-                                required="true">
-                        </section>
+                    <section class="col-lg blocks">
+                        <label class="text-uppercase">Business Name On Card*<img src="icon.svg"/></label>
+                        <input type="text" class="form-control" id="nameOnCard" placeholder="TEST" value="TEST"
+                            required="true">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
+
                     </section>
                 </section>
-                <section class="blocks">
+                <section class="lgblocks">
                     <label class="text-uppercase">Business Address Line 1*</label>
-                    <section>
-                        <input type="text" class="form-control" id="address1">
-                    </section>
+                    <input type="text" class="form-control" id="address1">
+                    <i class="bi bi-check-circle "></i>
+                    <i class="bi bi-exclamation-triangle-fill "></i>
+                    <small>Error Message</small>
                 </section>
-                <section class="row blocks">
-                    <section class="col-lg">
+                <section class="row ">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Business Address Line 2
                         </label>
-                        <section>
-                            <input type="text" class="form-control" id="address2">
-                        </section>
+                        <input type="text" class="form-control" id="address2">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
-                    <section class="col-lg">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Zip Code*</label>
-                        <section>
-                            <input type="number" class="form-control" id="zipCode">
-                        </section>
+                        <input type="number" class="form-control" id="zipCode">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
                 </section>
-                <section class="blocks">
-                    <label class="text-uppercase">Business Phone Number* <img src="icon.svg" class="icon" /></label>
-                    <section>
-                        <input type="tel" class="form-control" id="mobileNum" pattern="(***)***-****"
-                            placeholder="(234)567-890" value="(___)___-____" required="true">
-                    </section>
+                <section class="lgblocks">
+                    <label class="text-uppercase">Business Phone Number* <img src="icon.svg"/></label>
+                    <input type="tel" class="form-control" id="mobileNum" pattern="(***)***-****"
+                        placeholder="(234)567-890" value="(___)___-____" required="true">
+                    <i class="bi bi-check-circle "></i>
+                    <i class="bi bi-exclamation-triangle-fill "></i>
+                    <small>Error Message</small>
                 </section>
                 <hr class="mt-4 mb-0">
                 <h5 class="sub-head">ENTER YOUR PERSONAL INFORMATION</h5>
-                <section class="row blocks">
-                    <section class="col-lg ">
+                <section class="row ">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">First Name*
                         </label>
-                        <section>
-                            <input type="text" class="form-control" id="firstName">
-                        </section>
+                        <input type="text" class="form-control" id="firstName">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
-                    <section class="col-lg">
+                    <section class="col-lg blocks">
                         <label>M.I.</label>
-                        <section>
-                            <input type="number" class="form-control" id="mi">
-                        </section>
+                        <input type="text" class="form-control" id="mi">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
-                    <section class="col-lg">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Last Name*
                         </label>
-                        <section>
-                            <input type="text" class="form-control" id="lastName">
-                        </section>
+                        <input type="text" class="form-control" id="lastName">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
                 </section>
-                <section class="blocks">
-                    <label class="text-uppercase">Name On Card*<img src="icon.svg" class="icon" /></label>
-                    <section>
-                        <input type="text" class="form-control" id="name">
-                    </section>
+                <section class="lgblocks">
+                    <label class="text-uppercase">Name On Card*<img src="icon.svg"/></label>
+                    <input type="text" class="form-control" id="name">
+                    <i class="bi bi-check-circle "></i>
+                    <i class="bi bi-exclamation-triangle-fill "></i>
+                    <small>Error Message</small>
                 </section>
                 <section class="my-2" style="display: flex;">
                     <input type="checkbox">
                     <label style="margin-left: 3%;">My home address is the same as my business address</label>
+
                 </section>
-                <section class="blocks">
+                <section class="lgblocks">
                     <label class="text-uppercase">Home Address Line 1*</label>
-                    <section>
-                        <input type="text" class="form-control" id="haddress1">
-                    </section>
+                    <input type="text" class="form-control" id="haddress1">
+                    <i class="bi bi-check-circle "></i>
+                    <i class="bi bi-exclamation-triangle-fill "></i>
+                    <small>Error Message</small>
                 </section>
-                <section class="row blocks">
-                    <section class="col-lg">
+                <section class="row">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Home Address Line 2
                         </label>
-                        <section>
-                            <input type="text" class="form-control" id="haddress2">
-                        </section>
+                        <input type="text" class="form-control" id="haddress2">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
-                    <section class="col-lg">
+                    <section class="col-lg blocks">
                         <label class="text-uppercase">Zip Code*</label>
-                        <section>
-                            <input type="number" class="form-control" id="hzipCode">
-                        </section>
+                        <input type="number" class="form-control" id="hzipCode">
+                        <i class="bi bi-check-circle "></i>
+                        <i class="bi bi-exclamation-triangle-fill "></i>
+                        <small>Error Message</small>
                     </section>
                 </section>
                 <h5 class="sub-head">TELL US WHERE TO SEND YOUR BILL</h5>
@@ -182,7 +201,7 @@
                 </p>
                 <p class="print text-primary">Print Terms,Conditions, and Disclosures</p>
                 <section class="text-center">
-                    <button type="button" class="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28"
+                    <button type="submit" class="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28"
                             fill="white" viewBox="0 0 60 63">
                             <path
                                 d="M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z">
