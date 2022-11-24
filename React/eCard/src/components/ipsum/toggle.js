@@ -1,0 +1,64 @@
+import React from 'react';
+import "../style.css";
+
+function Toggle() {
+
+
+    function myFunction() {
+        const x = document.getElementById("togle");
+        const y = document.getElementById("article");
+        if (x.className === "dropdown-toggle") {
+            x.className = "dropup dropdown-toggle";
+            y.style.display = "block";
+            y.style.visibility = "visible";
+
+        } else {
+            x.className = "dropdown-toggle";
+            y.style.display = "none";
+        }
+    }
+
+    function offerFunc() {
+        const x = document.getElementById("arrow");
+        const y = document.getElementById("introd")
+        if (x.className === "dropdown-toggle") {
+            x.className = "dropup dropdown-toggle";
+            y.style.display = "block";
+            y.style.visibility = "visible";
+
+        } else {
+            x.className = "dropdown-toggle";
+            y.style.display = "none";
+
+        }
+    }
+
+
+    return (
+
+        <section className="briefsm" >
+            {/* <h4 className="head">Lorem Ipsum <BsChevronDown id="togle" onClick={myFunction}/></h4> */}
+            <h3 className="head">Lorem Ipsum<span id="togle" className="dropdown-toggle" onClick={myFunction}> </span></h3>
+            <section id="article">
+                <h2>Apply in minutes. Get a decision in seconds.</h2>
+                <p className="offer"><strong>SPECIAL OFFER FOR YOU <span id="arrow" className="dropdown-toggle" onClick={offerFunc}
+                ></span></strong></p>
+                <article id="introd">Lorem Ipsum is simply dummy text
+                    of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to
+                    make a type specimen book. It has survived not only
+                    five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker
+                    including versions of Lorem Ipsum.</article>
+                <p className="fee">&dollar;295 Annual Fee</p>
+            </section>
+        </section >
+
+    )
+}
+
+export default Toggle;

@@ -1,6 +1,6 @@
-main {
+.main {
     background-color: #f2f5f5;
-    display: flex;
+    /* display: flex; */
     color: rgb(66, 60, 60);
     font-weight: 500;
     /* font-size: small; */
@@ -8,60 +8,41 @@ main {
 }
 
 
-.blocks,.lgblocks{
+.blocks {
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
 }
-.blocks label,.lgblocks label{
+
+.blocks label {
     display: inline-block;
     /* margin-bottom: 5px; */
 }
 
-.blocks.success input,.lgblocks.success input{
-    border-color: #2ecc71;
-
-}
-.blocks.error input,.lgblocks.error input{
-    border-color: red;
-
-}
-.blocks.success i.bi-check-circle,.lgblocks.success i.bi-check-circle{
-    color: #2ecc71;
-    visibility: visible;
-}
-.blocks.error i.bi-exclamation-circle,.lgblocks.error i.bi-exclamation-circle{
-    color: red;
-    visibility: visible;
+.form-control {
+    background-color: #f2f5f5 !important;
 }
 
-
-
-#myDIV,
-#arrow {
-    visibility: hidden;
-}
-
-#article {
-    display: block;
-}
-
-.togle {
+#togle {
     font-size: 2rem;
     cursor: pointer;
     user-select: none;
     font-size: 1.2rem;
+    display: none;
 }
 
+input {
+    margin-top: 2%;
+}
 
-.brief {
-    width: 35%;
-    padding: 2rem;
-    padding-left: 5%;
-    padding-top: 3%;
+.brief,.briefsm {
+    /* width: 35%; */
+    padding: 10% 3% 9% 15%;
     font-weight: 600;
 }
-
+.briefsm{
+    display: none;
+}
 
 .fee {
     font-weight: 700;
@@ -75,7 +56,7 @@ main {
 
 
 .formFill {
-    width: 63%;
+    /* width: 63%; */
     background-color: white;
     padding: 2rem 3rem;
 }
@@ -89,12 +70,8 @@ main {
 }
 
 .sub-head,
-.blocks,.lgblocks {
+.blocks {
     padding-top: 2%;
-}
-
-.form-control:valid {
-    background-color: #f2f5f5 !important;
 }
 
 .submit,
@@ -132,29 +109,7 @@ main {
     text-align: end;
     visibility: hidden;
 }
-.lgblocks i{
-    position: absolute;
-    top: 43%;
-    right: 3%;
-    visibility: hidden;
-} 
-.blocks i{
-    position: absolute;
-    top: 43%;
-    right: 9%;
-    visibility: hidden;
-}
 
-
-.blocks small,.lgblocks small{
-    visibility: hidden;
-    position: absolute;
-    bottom: 0;
-}
-.blocks.error small,.lgblocks.error small{
-    color: #e74c3e;
-    visibility: visible;
-} 
 
 
 @media (min-width:426px) and (max-width:1023px) {
@@ -162,62 +117,63 @@ main {
         visibility: visible;
     }
 
-    main {
+    .main {
         display: block;
         width: 100%;
     }
 
-    .ruler {
+    .ruler,#togle {
         display: none;
     }
 
     .fee {
         padding-top: 4%;
     }
-
-    .brief,
-    .formFill {
-        width: 100%;
-    }
-
     .brief {
-        display: flex;
+        display:flex;
+        padding-left: 8%;
     }
-
+    
     #article {
-        width: 70%;
+        width: 65%;
         margin: 0%;
         margin-left: 10%;
     }
 
     .formFill {
-        width: 93%;
+        width: auto;
         margin-left: 5%;
+        margin-right: 5%;
     }
 
     .submit,
     .save {
         width: 60%;
     }
-    .blocks i{
-        right: 5%;
-    }
 
 }
 
 @media (min-width:0px) and (max-width:425px) {
+    .form_sm{
+        padding-right: 0%;
+    }
     .print {
         font-size: 1rem;
         text-align: end;
         visibility: visible;
     }
-
-    label,
+    form{
+        width:100%;
+    }
     .sub-head {
         margin-top: 5%;
     }
 
-    h4.head {
+    .lorem,.ruler {
+        display: none;
+    }
+
+    .head {
         color: rgb(62, 62, 230);
         text-transform: uppercase;
         text-align: center;
@@ -225,52 +181,50 @@ main {
 
     }
 
-
-    p.offer,
-    #introd {
-        margin-top: 8%;
-        width: 85%;
-        /* margin-right: 0%; */
-        margin-left: 20%;
+    .offer {
+        width: 65%;
     }
 
-    #myDIV,
+    .briefsm {
+        display: block;
+    }
+
+    p.offer,
+    #introd,
+    h2 {
+        margin-top: 8%;
+        /* width:30%; */
+        margin-left: 16%;
+    }
+
+    #togle,
     #arrow {
+        display: block;
+        display: inline;
         visibility: visible;
     }
 
     #article,
-    #introd {
-        /* visibility: hidden; */
+    #introd,
+    .heading {
         display: none;
+        padding-left: 4%;
     }
 
-    main {
+    .main {
         display: block;
-        width: 100%;
         font-size: small;
-    }
-
-    .ruler {
-        display: none;
-    }
-
-    .brief,
-    .formFill {
-        width: 100%;
     }
 
     .fee {
         text-align: start;
         margin: 0%;
+        padding-top:5%;
     }
 
-
-    .formFill {
-        width: 90%;
-        margin-left: 5%;
+    .brief,.briefsm {
+        padding: 5% 0% 4% 5%;
     }
-
     .submit,
     .save {
         width: 90%;
