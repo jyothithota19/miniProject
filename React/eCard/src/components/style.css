@@ -1,12 +1,8 @@
 .main {
     background-color: #f2f5f5;
-    /* display: flex; */
     color: rgb(66, 60, 60);
     font-weight: 500;
-    /* font-size: small; */
-    /* padding:20%; */
 }
-
 
 .blocks {
     margin-bottom: 10px;
@@ -16,7 +12,6 @@
 
 .blocks label {
     display: inline-block;
-    /* margin-bottom: 5px; */
 }
 
 .form-control {
@@ -35,12 +30,13 @@ input {
     margin-top: 2%;
 }
 
-.brief,.briefsm {
+.brief {
     /* width: 35%; */
-    padding: 10% 3% 9% 15%;
+    padding: 10% 3% 9%;
     font-weight: 600;
 }
-.briefsm{
+
+.mobile {
     display: none;
 }
 
@@ -117,23 +113,20 @@ input {
         visibility: visible;
     }
 
-    .main {
-        display: block;
-        width: 100%;
-    }
-
-    .ruler,#togle {
+    .ruler,
+    #togle {
         display: none;
     }
 
     .fee {
         padding-top: 4%;
     }
+
     .brief {
-        display:flex;
+        display: flex;
         padding-left: 8%;
     }
-    
+
     #article {
         width: 65%;
         margin: 0%;
@@ -154,22 +147,27 @@ input {
 }
 
 @media (min-width:0px) and (max-width:425px) {
-    .form_sm{
-        padding-right: 0%;
+
+    .brief {
+        font-weight: 600;
     }
+
     .print {
         font-size: 1rem;
         text-align: end;
         visibility: visible;
     }
-    form{
-        width:100%;
+
+    form {
+        width: 100%;
     }
+
     .sub-head {
         margin-top: 5%;
     }
 
-    .lorem,.ruler {
+    .lorem,
+    .ruler {
         display: none;
     }
 
@@ -182,11 +180,7 @@ input {
     }
 
     .offer {
-        width: 65%;
-    }
-
-    .briefsm {
-        display: block;
+        width: 80%;
     }
 
     p.offer,
@@ -195,13 +189,6 @@ input {
         margin-top: 8%;
         /* width:30%; */
         margin-left: 16%;
-    }
-
-    #togle,
-    #arrow {
-        display: block;
-        display: inline;
-        visibility: visible;
     }
 
     #article,
@@ -219,15 +206,20 @@ input {
     .fee {
         text-align: start;
         margin: 0%;
-        padding-top:5%;
+        padding-top: 5%;
     }
 
-    .brief,.briefsm {
-        padding: 5% 0% 4% 5%;
+    .mobile {
+        display: block;
     }
+
     .submit,
     .save {
         width: 90%;
     }
+
+    /* .form_sm {
+        padding: 0%;
+    } */
 
 }

@@ -5,29 +5,27 @@ function Toggle() {
 
 
     function myFunction() {
-        const x = document.getElementById("togle");
+        const x = document.getElementById("ipsum");
         const y = document.getElementById("article");
-        if (x.className === "dropdown-toggle") {
-            x.className = "dropup dropdown-toggle";
+        if (x.className === "") {
+            x.className = "dropup";
             y.style.display = "block";
-            y.style.visibility = "visible";
 
         } else {
-            x.className = "dropdown-toggle";
+            x.className = "";
             y.style.display = "none";
         }
     }
 
     function offerFunc() {
-        const x = document.getElementById("arrow");
+        const x = document.getElementById("article");
         const y = document.getElementById("introd")
-        if (x.className === "dropdown-toggle") {
-            x.className = "dropup dropdown-toggle";
+        if (x.className === "") {
+            x.className = "dropup";
             y.style.display = "block";
-            y.style.visibility = "visible";
 
         } else {
-            x.className = "dropdown-toggle";
+            x.className = "";
             y.style.display = "none";
 
         }
@@ -36,13 +34,13 @@ function Toggle() {
 
     return (
 
-        <section className="briefsm" >
-            {/* <h4 className="head">Lorem Ipsum <BsChevronDown id="togle" onClick={myFunction}/></h4> */}
-            <h3 className="head">Lorem Ipsum<span id="togle" className="dropdown-toggle" onClick={myFunction}> </span></h3>
+        <section className="mobile">
+            <section id="ipsum">
+                <h3 className="head dropdown-toggle" onClick={myFunction}> Lorem Ipsum </h3>
+            </section>
             <section id="article">
                 <h2>Apply in minutes. Get a decision in seconds.</h2>
-                <p className="offer"><strong>SPECIAL OFFER FOR YOU <span id="arrow" className="dropdown-toggle" onClick={offerFunc}
-                ></span></strong></p>
+                <p className="offer dropdown-toggle" onClick={offerFunc}><strong>SPECIAL OFFER FOR YOU </strong></p>
                 <article id="introd">Lorem Ipsum is simply dummy text
                     of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard

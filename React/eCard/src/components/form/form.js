@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import "../style.css";
-import info from "../asset/info.svg";
+import info from "../info.svg";
 
 function FormExample() {
     const [validated, setValidated] = useState(false);
@@ -43,31 +43,27 @@ function FormExample() {
         let telEl = document.querySelector('#validationMobile')
         telEl.addEventListener('keyup', (e) => {
             let val = e.target.value;
-            e.target.value = val
-                .replace(/\D/g, '')
-                .replace(/(\d{1,3})(\d{1,3})?(\d{1,3})?/g, function (txt, f, s, t) {
-                    if (t) {
-                        return `(${f})${s}-${t}`
-                    } else if (s) {
-                        return `(${f})${s}`
-                    } else if (f) {
-                        return `(${f})`
-                    }
-                });
+            e.target.value = val.replace(/\D/g, '').replace(/(\d{1,3})(\d{1,3})?(\d{1,4})?/g, function (txt, f, s, t) {
+                if (t) {
+                    return `(${f})${s}-${t}`
+                } else if (s) {
+                    return `(${f})${s}`
+                } else if (f) {
+                    return `(${f})`
+                }
+            });
         })
     })
-    //--------------------Mobile NUmber auto pattern  ends------------//
+    // --------------------Mobile NUmber auto pattern  ends------------//
 
     return (
         <main>
-
             {/* {<!----------------------- FORM STARTS---------------------- --> */}
-
             <section className="formFill">
                 <Form id="forms" noValidate validated={validated} onSubmit={handleSubmit}>
                     <h2 className="heading">Apply in minutes. Get a decision in seconds.</h2>
                     <Form.Group className="blocks" controlId="validationEmail">
-                        <Form.Label>EMAIL ADDRESS*<img src={info} alt="info"/></Form.Label>
+                        <Form.Label>EMAIL ADDRESS*<img src={info} alt="info" /></Form.Label>
                         <Form.Control
                             required
                             type="email"
@@ -75,7 +71,7 @@ function FormExample() {
                             defaultValue="test@example.com"
                             pattern="[a-zA-Z0-9_.-]+@[a-zA-Z0-9.]+$"
                         />
-                        <Form.Control.Feedback type="invalid">Please Enter a Valid Email Address</Form.Control.Feedback>
+                        <Form.Control.Feedback type="invalid">Email Address only accepts alphanumeric, @.-_</Form.Control.Feedback>
                     </Form.Group>
                     {/* <!------------------ BUSINESS INFO STARTS----- --> */}
                     <h5 className="sub-head">ENTER YOUR BUSINESS INFORMATION</h5>
@@ -91,7 +87,7 @@ function FormExample() {
                             <Form.Control.Feedback type="invalid">Please Enter Legal Business Name</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} lg="6" controlId="validationBuName" className="blocks">
-                            <Form.Label className="text-uppercase">Business Name On Card*<img src={info} alt="infosymbol"/></Form.Label>
+                            <Form.Label className="text-uppercase">Business Name On Card*<img src={info} alt="infosymbol" /></Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -131,16 +127,16 @@ function FormExample() {
                         </Form.Group>
                     </Row>
                     <Form.Group controlId="validationMobile" className="blocks">
-                        <Form.Label className="text-uppercase">Business Phone Number*<img src={info} alt="infoicon"/></Form.Label>
+                        <Form.Label className="text-uppercase">Business Phone Number*<img src={info} alt="infoicon" /></Form.Label>
                         <Form.Control
                             required
                             type="tel"
-                            pattern="^\(\d{3}\)\d{3}-\d{3}"
-                            placeholder="(234)567-890"
-                            maxLength={12}
-                           // defaultValue="(___)___-____"
+                            pattern="^\(\d{3}\)\d{3}-\d{4}"
+                            placeholder="(234)567-8901"
+                            maxLength={13}
+                        // defaultValue="(___)___-____"
                         />
-                        <Form.Control.Feedback type="invalid">Your business Phone Number is equired to process the Application</Form.Control.Feedback>
+                        <Form.Control.Feedback type="invalid">Enter a valid business Phone Number</Form.Control.Feedback>
                     </Form.Group>
                     {/* <!------------------ BUSINESS INFO ENDS----- ------------------>
                           <!----------------- PERSONAL INFO STARTS----------------- --> */}
@@ -173,7 +169,7 @@ function FormExample() {
                         </Form.Group>
                     </Row>
                     <Form.Group className="blocks" controlId="validationName04">
-                        <Form.Label className="text-uppercase">Name On Card*<img src={info} alt="info-icon"/></Form.Label>
+                        <Form.Label className="text-uppercase">Name On Card*<img src={info} alt="info-icon" /></Form.Label>
                         <Form.Control
                             required
                             type="text"

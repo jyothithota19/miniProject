@@ -3,12 +3,10 @@ import "../style.css";
 import Toggle from './toggle';
 
 function Ipsum() {
-
-
     return (
-
             <section className="brief">
-                <h4 className="lorem">Lorem Ipsum</h4><Toggle></Toggle>
+                <Toggle></Toggle>
+                <h4 className="lorem">Lorem Ipsum</h4>
                 <hr className="mt-0 ruler"></hr>
                 <section id="article">
                     <p className="offer"><strong>SPECIAL OFFER FOR YOU </strong></p>
