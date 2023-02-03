@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import FormExample from './components/form/form';
 import Ipsum from './components/ipsum/ipsum';
+// import sum from './sum';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         </Col>
       </Row>
     </Container>
+    // <sum></sum>
 
   );
 

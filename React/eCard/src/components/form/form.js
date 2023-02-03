@@ -5,22 +5,73 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import "../style.css";
 import info from "../info.svg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+import { connect } from "react-redux";
 
-function FormExample() {
+
+function FormExample(props) {
+    const [applicantData, updateApplicantData] = useState({});
+    const handleChange = (e) => {
+        updateApplicantData({
+            ...applicantData,
+            [e.target.name]: e.target.value.trim()
+        });
+    };
     const [validated, setValidated] = useState(false);
+
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
+        else {
+            event.preventDefault();
+            toast.success("Application Submitted Successfully", {
+                position: toast.POSITION.TOP_CENTER,
+            });
+            // const formData = new FormData();
+            // for (let key in applicantData)
+            //     formData.set(key, applicantData[key]);
+            // storeApplicationData(formData);
+            console.log("Latest Application:", applicantData);
+            props.store_application(applicantData);
+
+            let payload = applicantData;
+            axios('http://localhost:3006/application/details', {
+                method: 'POST',
+                data: payload
+            }).then(function (response) {
+                    console.log(response);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+        }
 
         setValidated(true);
     }
+    
+    // const storeApplicationData = (async (personData) => {
+
+    //     try {
+    //         const response = await axios.post("http://localhost:3006/application/details", personData);
+    //         console.log('res', response);
+    //         //   console.log(personData);
+
+    //     } catch (err) {
+
+    //         console.error(err)
+    //     }
+    // });
+
     // -----  Autofill Addrress checkbox Function ----Start------//
     function address() {
         if (document.getElementById(
             "same").checked) {
+            document.getElementById(
+                "same").value = "on";
             document.getElementById("validationHomeAd").value = document.getElementById("validationBuAd").value;
             document.getElementById('validationHomeAd').setAttribute('readonly', true);
             document.getElementById("HomeAddress2").value = document.getElementById("BuAddress2").value;
@@ -35,6 +86,8 @@ function FormExample() {
             document.getElementById('HomeAddress2').removeAttribute('readonly', true);
             document.getElementById("validationZipHome").value = "";
             document.getElementById('validationZipHome').removeAttribute('readonly', true);
+            document.getElementById(
+                "same").value = "off"
         }
     }
     // -----  Autofill Addrress checkbox Function ----Ends------//
@@ -63,12 +116,14 @@ function FormExample() {
                 <Form id="forms" noValidate validated={validated} onSubmit={handleSubmit}>
                     <h2 className="heading">Apply in minutes. Get a decision in seconds.</h2>
                     <Form.Group className="blocks" controlId="validationEmail">
-                        <Form.Label>EMAIL ADDRESS*<img src={info} alt="info" /></Form.Label>
+                        <Form.Label >EMAIL ADDRESS*<img src={info} alt="info" /></Form.Label>
                         <Form.Control
                             required
+                            onChange={handleChange}
+                            name="emailAddress"
                             type="email"
+                            role="textbox"
                             placeholder="name@example.com"
-                            defaultValue="test@example.com"
                             pattern="[a-zA-Z0-9_.-]+@[a-zA-Z0-9.]+$"
                         />
                         <Form.Control.Feedback type="invalid">Email Address only accepts alphanumeric, @.-_</Form.Control.Feedback>
@@ -80,9 +135,10 @@ function FormExample() {
                             <Form.Label className="text-uppercase">Legal Business Name*</Form.Label>
                             <Form.Control
                                 required
+                                onChange={handleChange}
+                                name="legalBuName"
                                 type="text"
                                 placeholder='test'
-                                defaultValue="test"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Legal Business Name</Form.Control.Feedback>
                         </Form.Group>
@@ -90,9 +146,10 @@ function FormExample() {
                             <Form.Label className="text-uppercase">Business Name On Card*<img src={info} alt="infosymbol" /></Form.Label>
                             <Form.Control
                                 required
+                                onChange={handleChange}
+                                name="buNameOnCard"
                                 type="text"
                                 placeholder="TEST"
-                                defaultValue="TEST"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Business Name on Card</Form.Control.Feedback>
                         </Form.Group>
@@ -102,6 +159,8 @@ function FormExample() {
                         <Form.Control
                             required
                             type="text"
+                            onChange={handleChange}
+                            name="buAddressLine1"
                         />
                         <Form.Control.Feedback type="invalid">Please Enter Business Address</Form.Control.Feedback>
                     </Form.Group>
@@ -112,6 +171,8 @@ function FormExample() {
                             <Form.Control
                                 type="text"
                                 required
+                                onChange={handleChange}
+                                name="buAddressLine2"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Address line 2</Form.Control.Feedback>
                         </Form.Group>
@@ -121,6 +182,9 @@ function FormExample() {
                                 required
                                 // type='number'
                                 // min="1"
+                                data-testid="primary-element"
+                                onChange={handleChange}
+                                name="buZipCode"
                                 pattern="[0-9]{4,}"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter a valid Zip Code</Form.Control.Feedback>
@@ -134,7 +198,8 @@ function FormExample() {
                             pattern="^\(\d{3}\)\d{3}-\d{4}"
                             placeholder="(234)567-8901"
                             maxLength={13}
-                        // defaultValue="(___)___-____"
+                            onChange={handleChange}
+                            name="buPhoneNumber"
                         />
                         <Form.Control.Feedback type="invalid">Enter a valid business Phone Number</Form.Control.Feedback>
                     </Form.Group>
@@ -144,10 +209,12 @@ function FormExample() {
                     <h5 className="sub-head">ENTER YOUR PERSONAL INFORMATION</h5>
                     <Row className="mb-3">
                         <Form.Group as={Col} lg="4" controlId="validationName01">
-                            <Form.Label className="text-uppercase">First name*</Form.Label>
+                            <Form.Label className="text-uppercase">First Name*</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
+                                onChange={handleChange}
+                                name="firstName"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter First Name</Form.Control.Feedback>
                         </Form.Group>
@@ -156,6 +223,8 @@ function FormExample() {
                             <Form.Control
                                 type="text"
                                 required
+                                onChange={handleChange}
+                                name="middleName"
                             />
                             <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                         </Form.Group>
@@ -164,6 +233,8 @@ function FormExample() {
                             <Form.Control
                                 required
                                 type="text"
+                                onChange={handleChange}
+                                name="lastName"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Last Name</Form.Control.Feedback>
                         </Form.Group>
@@ -173,6 +244,8 @@ function FormExample() {
                         <Form.Control
                             required
                             type="text"
+                            onChange={handleChange}
+                            name="nameOnCard"
                         />
                         <Form.Control.Feedback type="invalid">Please Enter Name On Card</Form.Control.Feedback>
                     </Form.Group>
@@ -180,9 +253,10 @@ function FormExample() {
                     <Form.Check
                         className="my-2"
                         id="same"
-                        name="same"
+                        name="sameAddress"
                         label="My home address is the same as my business address"
-                        onChange={address}
+                        onClick={address}
+                        onChange={handleChange}
                     />
                     {/*---------- Checkbox  End--------- */}
                     {/* -----------Home Address Details Start--------- */}
@@ -191,6 +265,8 @@ function FormExample() {
                         <Form.Control
                             required
                             type="text"
+                            onChange={handleChange}
+                            name="homeAddressLine1"
 
                         />
                         <Form.Control.Feedback type="invalid">Please Enter Home Address</Form.Control.Feedback>
@@ -202,6 +278,8 @@ function FormExample() {
                             <Form.Control
                                 required
                                 type="text"
+                                onChange={handleChange}
+                                name="homeAddressLine2"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Home Address line 2</Form.Control.Feedback>
                         </Form.Group>
@@ -209,8 +287,11 @@ function FormExample() {
                             <Form.Label className="text-uppercase">Zip Code*</Form.Label>
                             <Form.Control
                                 required
+                                data-testid="secondary-element"
                                 // type="number"
                                 pattern="[0-9]{4,}"
+                                onChange={handleChange}
+                                name="homeZipCode"
                             />
                             <Form.Control.Feedback type="invalid">Please Enter Zip Code</Form.Control.Feedback>
                         </Form.Group>
@@ -220,12 +301,17 @@ function FormExample() {
                     <Form.Check type="radio" aria-label="radio 1"
                         className="my-3 mx-2"
                         label="Business"
-                        name="bill"
-                        required />
+                        name="billing"
+                        value="Business"
+                        onChange={handleChange}
+                        required
+                    />
                     <Form.Check type="radio" aria-label="radio 2"
                         className="my-3 mx-2"
                         label="Home"
-                        name="bill" />
+                        value="Home"
+                        onChange={handleChange}
+                        name="billing" />
                     <p className="mt-2 text-secondary">* Required Information</p>
 
                     {/* <!----------------- TERMS & COND  STARTS----------------- --> */}
@@ -256,8 +342,25 @@ function FormExample() {
                 </Form>
             </section>
             {/* ----------------------Form Ends------------------ */}
+            <ToastContainer />
         </main>
     );
 }
 
-export default FormExample;
+// export default FormExample;
+const mapStateToProps = (state) => {
+    console.log(state);
+
+    return {
+        redux: state
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        store_application: (applicantData) =>
+            dispatch({ type: "store_application", applicantData })
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormExample);
