@@ -1,0 +1,42 @@
+//Error Validations
+
+// test("should show an error message for invalid email", () => {
+//   render(<App />);
+//   const emailErrElement = screen.queryByText("Email Address only accepts alphanumeric, @.-_");
+//   const emailInp = screen.getByLabelText('EMAIL ADDRESS*');
+//   expect(emailErrElement.value).not.toBeInTheDocument();
+
+//   userEvent.type(emailInp, "test@gmail.com%");
+//   const submitBtnElement = screen.getByRole("button", { name: /submit/i });
+//   userEvent.click(submitBtnElement);
+//   const emailErrorElement = screen.queryByText(/Email Address only accepts alphanumeric, @.-_/i);
+//   expect(emailErrorElement.value).toBeInTheDocument();
+// });
+
+test("invalid mail", async () => {
+  render(<App />);
+  // userEvent.click(screen.getByRole("button"));
+  // const emailInp = screen.getByLabelText('EMAIL ADDRESS*');
+  userEvent.type(screen.getByRole("textbox"), "test@gmail.com&");
+  const submitBtnElement = screen.getByRole("button", { name: /submit/i });
+  userEvent.click(submitBtnElement);
+  // userEvent.type(emailInp, "test@gmail.com");
+  expect(screen.getByRole("textbox")).toHaveValue("test@gmail.com&");
+  expect(
+    await screen.findByText("Email Address only accepts alphanumeric, @.-_")
+  ).toBeVisible();
+});
+
+
+test("valid mail", async () => {
+  const { container } = render(<App />);
+  const emailInp = screen.getByLabelText('EMAIL ADDRESS*');
+  const submitBtnElement = screen.getByRole("button", { name: /submit/i });
+  userEvent.type(emailInp, "valid@gmail.com");
+  userEvent.click(submitBtnElement);
+  let validationFeedback;
+  await waitFor(() => {
+    validationFeedback = container.querySelector('[data-validity="true"]');
+  });
+  expect(validationFeedback).toBeTruthy();
+});

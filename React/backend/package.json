@@ -1,0 +1,27 @@
+{
+  "name": "ecard_data",
+  "version": "1.0.0",
+  "description": "application form data",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyothithota19/miniProject.git"
+  },
+  "author": "sridurga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jyothithota19/miniProject/issues"
+  },
+  "homepage": "https://github.com/jyothithota19/miniProject#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.2",
+    "nodemon": "^2.0.20"
+  }
+}
