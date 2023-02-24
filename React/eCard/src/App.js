@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import FormExample from './components/form/form';
-import Ipsum from './components/ipsum/ipsum';
+import Ipsum from './components/header/header';
 // import sum from './sum';
 
 
